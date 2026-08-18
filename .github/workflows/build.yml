@@ -1,1 +1,26 @@
+name: Build Gorilla Tag Mod
 
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Build with dotnet
+      run: dotnet build Mods.csproj --configuration Release
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: CustomMod-dll
+        path: bin/Release/net472/
