@@ -16,13 +16,11 @@ jobs:
       with:
         dotnet-version: '6.0.x'
 
-    - name: Compile Mod directly
-      run: |
-        mkdir -p output
-        csc -target:library -out:output/VerityMonster.dll AllMods.cs -reference:/usr/share/dotnet/sdk/6.0.428/ref/net472/mscorlib.dll
+    - name: Build Solution
+      run: dotnet build --configuration Release
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: CustomMod-dll
-        path: output/
+        path: '**/Release/**/*.dll'
