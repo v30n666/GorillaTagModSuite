@@ -7,17 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="UnityEngine">
-      <HintPath>libs/UnityEngine.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>libs/UnityEngine.CoreModule.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="BepInEx.Core">
-      <HintPath>libs/BepInEx.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
+    <PackageReference Include="UnityEngine" Version="1.0.0" />
+    <PackageReference Include="UnityEngine.CoreModule" Version="1.0.0" />
   </ItemGroup>
 </Project>
